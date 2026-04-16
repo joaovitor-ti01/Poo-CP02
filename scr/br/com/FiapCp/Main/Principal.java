@@ -7,10 +7,10 @@ import br.com.FiapCp.Model.Rota;
 
 public class Principal {
     public static void main(String[] args) {
-        Caminhao caminhao1 = new Caminhao("ABC1234", 500.0, 4);
-        Pacote pacote1 = new Pacote(-10.5, "BR999", "Pendente");
+        Caminhao caminhao1 = new Caminhao("ABC1234", 500.0, 5);
+        Pacote pacote1 = new Pacote("BR999", 10.5, "Pendente");
         Moto moto1 = new Moto("ACC1234", 500.0, true);
-        Rota r = new Rota(pacote1, moto1);
+        Rota r = new Rota(pacote1, caminhao1);
         r.enviarPacote();
     }
 }

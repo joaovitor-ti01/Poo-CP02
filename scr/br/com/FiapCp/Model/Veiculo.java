@@ -4,10 +4,19 @@ public class Veiculo {
     private String placa;
     private double capacidade;
 
-
     public Veiculo(String placa, double capacidade) {
         this.placa = placa;
-        this.capacidade = capacidade;
+
+        if (capacidade > 0) {
+            this.capacidade = capacidade;
+        } else {
+            this.capacidade = 0;
+            System.out.println("Capacidade inválida.");
+        }
+    }
+
+    public boolean suportaPeso(double peso) {
+        return peso <= capacidade;
     }
 
     public String getPlaca() {
@@ -23,6 +32,14 @@ public class Veiculo {
     }
 
     public void setCapacidade(double capacidade) {
-        this.capacidade = capacidade;
+        if (capacidade > 0) {
+            this.capacidade = capacidade;
+        } else {
+            System.out.println("Capacidade inválida.");
+        }
     }
+
+    public boolean isValido() {
+    return true;
+}
 }

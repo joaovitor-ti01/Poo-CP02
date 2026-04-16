@@ -1,11 +1,17 @@
 package br.com.FiapCp.Model;
 
-public class Caminhao extends Veiculo{
+public class Caminhao extends Veiculo {
     private int eixos;
 
     public Caminhao(String placa, double capacidade, int eixos) {
         super(placa, capacidade);
-        this.eixos = eixos;
+
+        if (eixos > 0) {
+            this.eixos = eixos;
+        } else {
+            this.eixos = 0;
+            System.out.println("Número de eixos inválido.");
+        }
     }
 
     public int getEixos() {
@@ -13,8 +19,15 @@ public class Caminhao extends Veiculo{
     }
 
     public void setEixos(int eixos) {
-        this.eixos = eixos;
+        if (eixos > 0) {
+            this.eixos = eixos;
+        } else {
+            System.out.println("Número de eixos inválido.");
+        }
     }
 
+@Override
+    public boolean isValido() {
+        return eixos > 0;
+    }
 }
-
